@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>My Cart</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of products">
+      <p slot="start">{{ p.count }}x</p>
+      <ion-label>{{ p.name }}</ion-label>
+      <ion-avatar slot="end">
+        <ion-img [src]="p.image"></ion-img>
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="success">
+    <ion-button expand="full" routerLink="/checkout" fiil="clear" color="light">
+      Checkout
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
